@@ -1,0 +1,91 @@
+.navBarBottom
+{  
+  position: relative;
+  top: 48px;
+  background-color: whitesmoke;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 800;
+  box-shadow: 1px 4px 4px -2px rgb(0, 0, 0), 0 0 0 0 rgb(0,0,0);
+  height: 24px;
+  line-height: 28px;
+  display: flex;
+  width: 50%;
+  margin-left: 25% !important;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;  
+  border-bottom: unset;
+  z-index: 1000;transition: all 0.5s;
+  
+}
+
+.navBarLinks
+{
+  text-align: center;
+  width: 100vw;
+  height: 25px;
+}
+
+.ant-menu-item.navBarLinks, .ant-menu-submenu.navBarLinks
+{
+  border-bottom: unset;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ant-menu.ant-menu-light .ant-menu-item-selected.navBarLinks, 
+.ant-menu.ant-menu-light .ant-menu-item-active.navBarLinks,
+.ant-menu.ant-submenu-light .ant-menu-submenu-open.navBarLinks
+{
+  border: unset;
+  background-color: blueviolet;
+  height: 25px;
+}
+
+.ant-menu-horizontal .ant-menu-item-selected.navBarLinks,
+.ant-menu-horizontal .ant-menu-item-active.navBarLinks,
+.ant-menu-submenu-horizontal .ant-menu-submenu-open.navBarLinks
+{
+  color: rgb(255, 255, 255);
+}
+
+.bgk
+{
+  position: relative;
+  background-color: rgba(7, 0, 14, 0.75);
+}
+
+
+body.dark-mode
+{
+  .navBarBottom
+  {
+    background-color: rgb(175, 175, 175);
+    box-shadow: 0 4px 4px -2px rgb(0, 0, 0), 0 0 0 0 rgb(0,0,0); 
+    /* border-top: 1px solid rgb(58, 58, 58); */
+    border-bottom: unset;
+  }
+
+  .navBarLinks
+  {
+    color: rgb(100, 100, 100);
+  }
+
+  .ant-menu.ant-menu-light .ant-menu-item-selected.navBarLinks, 
+  .ant-menu.ant-menu-light .ant-menu-item-active.navBarLinks,
+  .ant-menu.ant-submenu-light .ant-menu-submenu-open.navBarLinks
+  {
+    background-color: rgb(77, 33, 46);
+  }
+
+  .ant-menu-horizontal .ant-menu-item-selected.navBarLinks,
+  .ant-menu-horizontal .ant-menu-item-active.navBarLinks,
+  .ant-menu-submenu-horizontal .ant-menu-submenu-open.navBarLinks
+  {
+    color: rgb(212, 212, 212);
+  }
+
+}
+

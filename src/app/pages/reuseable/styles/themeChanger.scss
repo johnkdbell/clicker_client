@@ -1,0 +1,40 @@
+.darkModeButton
+{
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.7em;
+  display: inline-block;
+  
+  right: 3.5em;
+  margin-top: 0.25em;
+  margin-right: 1.5vw;
+  background: transparent;
+  color: #444444;  
+  font-size: 22px;
+  border-radius: 10em;
+  text-align: center;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.darkModeButton:hover
+{
+  background: blueviolet;
+  color: white;
+  transition: ease-in .4s;
+  transform: scale(1.1);
+}
+
+
+body.dark-mode
+{
+  .darkModeButton:hover
+  {
+    background: rgb(77, 33, 46);
+    color: white;
+    transition: ease-in .4s;
+    transform: scale(1.1);
+  }
+}
+

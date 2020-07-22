@@ -1,0 +1,180 @@
+.padder
+{
+  padding-top: 0.01em;
+}
+
+.padderVert
+{
+  padding-left: 1em;
+}
+
+.cookieHub
+{
+  background-color:rgba(0, 39, 58, 0.198);
+  text-align: center;
+  color: white;
+  box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.5), 0 0 0 0 rgb(0,0,0);
+  height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;      /* Center children horizontally */
+  justify-content: center;  /* Center children vertically */
+  align-self: center;
+}
+
+
+.cookie img
+{
+  object-fit: cover;
+  width: calc(10vw + 30px);
+  height: calc(10vw + 20px); 
+  filter: saturate(700%) hue-rotate(50deg);
+  transition: all 0.3s;
+}
+
+.cookie:hover img 
+{
+  transform: scale(1.025);
+  filter: saturate(1000%) hue-rotate(50deg);
+}
+
+.cookie:active img 
+{
+  transform: scale(1.1);
+  filter: saturate(1500%) hue-rotate(50deg);
+}
+
+.cookieAmount
+{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  width: auto;
+}  
+
+.cookieAmount h2
+{
+  color: white;
+}  
+
+.cookieImg:hover .cookieAmount h2
+{
+  transform: scale(1.1);
+}  
+
+.cookieAmount:hover
+{
+  text-align: center;
+}
+
+.secondRowRight
+{
+  .upgradeTooltip
+  {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(80, 0, 112, 0.65);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    left: -90%;
+    top: 120%;
+  }
+
+  *:focus
+  {
+    outline: none;
+  }
+
+  .upgradeTooltip p
+  {
+    
+    background-color: rgb(0, 0, 0);
+    line-height: 40%;
+  }
+    
+  .upgradesImageContainer:hover .upgradeTooltip
+  {
+    visibility: visible;
+    pointer-events: none;
+  }
+
+  .upgradeTooltip::after
+  {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent black transparent;
+  }
+
+  .upgradesImageContainer
+  {
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    background-color:rgba(0, 39, 58, 0.198);
+    text-align: center;
+    color: white;
+    box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.5), 0 0 0 0 rgb(0,0,0);
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .upgradesImage
+  {
+    width: 3.0em;
+    height: 3.0em;
+    object-fit: contain;
+  }
+
+  .upgradesImage:hover
+  {
+    transform: scale(1.05);
+  }
+
+  .upgradesImage:active
+  {
+    transform: scale(1.1);
+  }
+
+  .upgradeSection
+  {
+    width: 100%;
+    height: 100%;
+  }
+
+
+}
+
+.mainWindow
+{
+  background-color: rgba(188, 146, 255, 0.226);
+  
+  .gameWindow
+  {
+    border: 10px solid rgba(0, 0, 0, 0.8);
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .game
+    {
+      image-rendering: pixelated;
+      width: calc(50% + 5vw);
+    }
+  }
+
+  .infoWindow
+  {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 30%;
+  }
+  
+}

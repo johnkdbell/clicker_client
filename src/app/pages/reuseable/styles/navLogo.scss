@@ -1,0 +1,97 @@
+.logboy
+{
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+}
+
+.navLogoButton
+{
+  background: url('../../../../assets/images/logo.svg') no-repeat;
+  height: 5em;
+  margin-top: -1.80em;
+  cursor: pointer;
+}
+
+
+.buuton
+{
+  padding-top: 1em;  
+  padding-bottom: 1em;
+  margin-top: 0.65em;
+  width: 6.5em;
+  height: 0.01em;
+  background: transparent;
+  border-radius: 0.25em;
+  text-align: center;
+  transition: all .4s;
+}
+
+.buuton:hover
+{
+  background: rgba(137, 43, 226, 0.568);
+  color: white;
+  transition: ease-in .3s;
+  transform: scale(1.25);
+}
+
+.navLogo3
+{
+  background: url('../../../../assets/images/logo.svg') no-repeat;
+  height: 50px;
+  width: 150px;
+  padding: 0px;
+}
+
+.navLogo4
+{
+  background: url('../../../../assets/images/logo.svg') no-repeat;
+  height: 50px;
+  width: 150px;
+  padding: 0px;
+}
+
+#booga.ant-popover-inner
+{
+  width: 9em;
+}
+
+
+
+body.dark-mode
+{
+  .buuton:hover
+  {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .navLogoButton
+  {
+    background: url('../../../../assets/images/logoDark.svg') no-repeat;
+  }
+
+  .navLogoButton:hover
+  {
+    background: url('../../../../assets/images/logo.svg') no-repeat;
+  }
+
+  #booga.ant-popover-inner
+  {
+    background-color: black;
+    width: 9em;
+  }
+
+  #booga.ant-popover-placement-top > .ant-popover-content > #booga.ant-popover-arrow,
+  .ant-popover-placement-bottom > .ant-popover-content > .ant-popover-arrow
+  {
+    bottom: 6.2px;
+    border-top-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-left-color: rgb(0, 0, 0);
+    -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+  }
+
+}

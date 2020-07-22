@@ -1,0 +1,103 @@
+#navbar {
+  position: fixed; /* Make it stick/fixed */
+  width: 100%; /* Full width */
+  transition: all 0.5s; /* Transition effect when sliding down (and up) */
+}
+
+.navBarTop
+{
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  background-color: whitesmoke;
+  padding-top: 2px;
+  box-shadow: 0 4px 4px -2px rgb(0, 0, 0), 0 0 0 0 rgb(0,0,0);
+  height: 50px;
+  line-height: 28px;
+  transition: all .3s;
+  top:0;
+}
+
+.navHamburgerMenu
+{
+  padding-top: 6px;
+  position: absolute;
+  left: 1.5%;
+  display: block;
+  transition: all .3s;
+}
+
+.navHamburgerMenu > .ant-btn-primary.navMenu
+{
+  font-weight: 500;
+  background: url('../../../../assets/images/hamMenu.svg') no-repeat;
+  color: black;
+  border: unset;
+  text-shadow:  unset;
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+  font-size: 28px;
+  line-height: 34px;
+  width: 35px;
+  height: 35px;
+  transition: all .1s;
+}
+
+.navHamburgerMenu > .ant-btn-primary.navMenu a.hamMenuIcon
+{
+  color: #444444;
+  text-shadow: unset;
+  -webkit-box-shadow: unset;
+  margin-left: -0.355em;
+}
+
+.navHamburgerMenu > .ant-btn-primary.navMenu:hover a.hamMenuIcon
+{
+  color: whitesmoke;
+  text-shadow: unset;
+  -webkit-box-shadow: unset;
+  margin-left: -0.355em;
+}
+
+
+.navHamburgerMenu > .ant-btn-primary.navMenu:hover
+{
+  background-color: blueviolet;
+  line-height: 32px;
+  transform: scale(1.1);
+  transition: ease-in .4s;
+}
+
+.navHamburgerMenu > .ant-btn-primary.navMenu a:hover
+{
+  text-shadow: unset;
+  -webkit-box-shadow: unset;
+}
+
+.navLogo
+{
+  background: url('../../../../assets/images/logo.svg') no-repeat;
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+}
+
+body.dark-mode
+{
+  .navBarTop
+  {
+    background-color: rgb(175, 175, 175);
+    box-shadow: 0 4px 4px -2px rgb(0, 0, 0), 0 0 0 0 rgb(0,0,0);
+  }
+
+  .navHamburgerMenu > .ant-btn-primary.navMenu:hover
+  {
+    background-color: rgb(77, 33, 46);
+  }
+
+}
