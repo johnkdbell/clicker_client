@@ -59,9 +59,8 @@ function update()
     Math.round(
       ((autoClicker +
         ((grandma * 5 * grandmaUpgrade * 5 * 2) / 5 || (grandma * 5 * 5) / 5) +
-        anime * 10) +
-        sadness * 10000 /*(something...)*/ /
-        5 +
+        anime * 10) /*(something...)*/ / 5 +
+        sadness * 10000 / 5 +
         Number.EPSILON) *
         100
     ) /
