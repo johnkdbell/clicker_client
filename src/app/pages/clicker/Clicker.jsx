@@ -11,13 +11,17 @@ var cookieCount = 0;
 var autoClicker = 0;
 var grandma = 0;
 var anime = 0;
+var sadness = 0;
 
 var grandmaUpgrade = 0;
 
 function update()
 {
   //Show/Hide Grandma Upgrade
-  if (grandma >= 5 && grandmaUpgrade < 1 || grandma >= 10 && grandmaUpgrade < 2 || grandma >= 20 && grandmaUpgrade < 3)  {
+  if (grandma >= 5 && grandmaUpgrade < 1 ||
+      grandma >= 10 && grandmaUpgrade < 2 || 
+      grandma >= 20 && grandmaUpgrade < 3)
+  {
     document.getElementById('testo').style.display = 'flex';
   } else {
     document.getElementById('testo').style.display = 'none';
@@ -26,6 +30,11 @@ function update()
   //Show/Hide Anime
   if (cookieCount >= 500 || anime >= 1) {
     document.getElementById('idAnime').style.display = 'flex';
+  } 
+
+  //Show/Hide Sadness
+  if (cookieCount >= 1000000 || sadness >= 1) {
+    document.getElementById('idSadness').style.display = 'flex';
   } 
 
   document.getElementById('idcookieCount').innerHTML = Math.round((cookieCount + Number.EPSILON) * 100) / 100; //Displayed Cookie Count Amount
@@ -43,11 +52,15 @@ function update()
   document.getElementById('priceAnime').innerHTML = ((anime + 1) * 500) + " Cookies";
   document.getElementById('amountAnime').innerHTML = anime + " Anime";
 
+  document.getElementById('priceSadness').innerHTML = ((sadness + 1) * 100000) + " Cookies";
+  document.getElementById('amountSadness').innerHTML = sadness + " Sadness";
+
   document.getElementById("cookiesPerSecond").innerHTML =
     Math.round(
       ((autoClicker +
         ((grandma * 5 * grandmaUpgrade * 5 * 2) / 5 || (grandma * 5 * 5) / 5) +
-        anime * 10) /*(something...)*/ /
+        anime * 10) +
+        sadness * 10000 /*(something...)*/ /
         5 +
         Number.EPSILON) *
         100
@@ -66,7 +79,10 @@ function timer() {
     cookieCount = cookieCount + grandma * 5.0 / 10;
   }
 
+  //Anime Cookie CPS
   cookieCount = cookieCount + anime * 10.0 / 10;
+  //Sadness Cookie CPS
+  cookieCount = cookieCount + sadness * 10000.0 / 10;
 
   update();
 } setInterval(timer, 500);
@@ -88,6 +104,8 @@ function save() {
   localStorage.setItem("grandma", grandma);
   localStorage.setItem("grandmaUpgrade", grandmaUpgrade);
   localStorage.setItem("anime", anime);
+  localStorage.setItem("sadness", sadness);
+
 }
 
 function load() {
@@ -107,9 +125,10 @@ function load() {
   anime = localStorage.getItem("anime");  
   anime = parseInt(anime) || 0;
 
+  sadness = localStorage.getItem("sadness");  
+  sadness = parseInt(sadness) || 0;
+
   save();
-
-
   update(); 
 }
 window.onload = load;
@@ -152,6 +171,20 @@ function buyAnime()
     if(cookieCount >= ((anime + 1) * 500 )) {
       cookieCount = cookieCount - ((anime + 1) * 500);
       anime = anime + 1;
+      
+      update();
+    }
+
+  }
+}
+
+function buySadness()
+{
+  if (cookieCount >= 100000) {
+    
+    if(cookieCount >= ((sadness + 1) * 100000 )) {
+      cookieCount = cookieCount - ((sadness + 1) * 100000);
+      sadness = sadness + 1;
       
       update();
     }
@@ -226,6 +259,16 @@ class SecondPage extends Component
                       <div><p id="amountAnime"/></div>
                     </div>
                     <img onClick={() => buyAnime()} className="upgradesImage" src="https://res.cloudinary.com/sfp/image/upload/w_200,f_auto/cprd/images/ste/4f890875-73fd-4228-8ea2-10c2a26c7a3e.png" alt="" />
+                  </button>
+                </span>
+
+                <span id="idSadness" style={{display: "none"}}>
+                  <button className="upgradesImageContainer">
+                    <div className="upgradeTooltip">
+                      <div><p id="priceSadness" /></div>
+                      <div><p id="amountSadness"/></div>
+                    </div>
+                    <img onClick={() => buySadness()} className="upgradesImage" src="https://cdn.discordapp.com/emojis/399972388571185152.png" alt="" />
                   </button>
                 </span>
               </Row> 
