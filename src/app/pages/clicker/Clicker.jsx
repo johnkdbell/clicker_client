@@ -2,7 +2,8 @@
 import React, { Component } from "react";
 import { Row, Col } from 'antd';
 
-//Component Imports
+//Image Imports
+import House from "../../../assets/images/background.png";
 
 //Style Imports
 import "./styles/clicker.scss";
@@ -19,7 +20,7 @@ function update()
 {
   //Show/Hide Grandma Upgrade
   if (grandma >= 5 && grandmaUpgrade < 1 ||
-      grandma >= 10 && grandmaUpgrade < 2 || 
+      grandma >= 10 && grandmaUpgrade < 2 ||
       grandma >= 20 && grandmaUpgrade < 3)
   {
     document.getElementById('testo').style.display = 'flex';
@@ -30,12 +31,12 @@ function update()
   //Show/Hide Anime
   if (cookieCount >= 500 || anime >= 1) {
     document.getElementById('idAnime').style.display = 'flex';
-  } 
+  }
 
   //Show/Hide Sadness
   if (cookieCount >= 1000000 || sadness >= 1) {
     document.getElementById('idSadness').style.display = 'flex';
-  } 
+  }
 
   document.getElementById('idcookieCount').innerHTML = Math.round((cookieCount + Number.EPSILON) * 100) / 100; //Displayed Cookie Count Amount
   document.title = Math.round((cookieCount + Number.EPSILON) * 100) / 100 + " Cookies"; //Displayed Title Cookie Count Amount
@@ -72,7 +73,7 @@ function update()
 function timer() {
   cookieCount = cookieCount + Math.round((autoClicker + Number.EPSILON) * 100) / 100 / 10;
 
-  if (grandmaUpgrade >= 1) { 
+  if (grandmaUpgrade >= 1) {
     cookieCount = cookieCount + (grandma * grandmaUpgrade) * 2;
   } else {
     cookieCount = cookieCount + grandma * 5.0 / 10;
@@ -93,8 +94,8 @@ function autoSave() {
 
 
 function add() {
-  cookieCount = cookieCount + 1; 
-  update();  
+  cookieCount = cookieCount + 1;
+  update();
 }
 
 function save() {
@@ -108,27 +109,27 @@ function save() {
 }
 
 function load() {
-  
+
   cookieCount = localStorage.getItem("cookieCount");
   cookieCount = parseInt(cookieCount) || 0;
 
-  autoClicker = localStorage.getItem("autoClicker");  
+  autoClicker = localStorage.getItem("autoClicker");
   autoClicker = parseInt(autoClicker) || 0;
 
-  grandma = localStorage.getItem("grandma");  
+  grandma = localStorage.getItem("grandma");
   grandma = parseInt(grandma) || 0;
 
-  grandmaUpgrade = localStorage.getItem("grandmaUpgrade");  
+  grandmaUpgrade = localStorage.getItem("grandmaUpgrade");
   grandmaUpgrade = parseInt(grandmaUpgrade) || 0;
 
-  anime = localStorage.getItem("anime");  
+  anime = localStorage.getItem("anime");
   anime = parseInt(anime) || 0;
 
-  sadness = localStorage.getItem("sadness");  
+  sadness = localStorage.getItem("sadness");
   sadness = parseInt(sadness) || 0;
 
   save();
-  update(); 
+  update();
 }
 window.onload = load;
 
@@ -146,7 +147,7 @@ function buyGrandma() {
   if(cookieCount >= ((grandma + 1) * 100 )) {
     cookieCount = cookieCount - ((grandma + 1) * 100);
     grandma = grandma + 1;
-    
+
     update();
   }
 }
@@ -156,21 +157,21 @@ function buyGrandmaUpgrade() {
     if(cookieCount >= ((grandmaUpgrade + 1) * 2500 )) {
       cookieCount = cookieCount - ((grandmaUpgrade + 1) * 2500 );
       grandmaUpgrade = grandmaUpgrade + 1;
-      
+
       update();
     }
-    
+
   }
 }
 
 function buyAnime()
 {
   if (cookieCount >= 500) {
-    
+
     if(cookieCount >= ((anime + 1) * 500 )) {
       cookieCount = cookieCount - ((anime + 1) * 500);
       anime = anime + 1;
-      
+
       update();
     }
 
@@ -180,11 +181,11 @@ function buyAnime()
 function buySadness()
 {
   if (cookieCount >= 100000) {
-    
+
     if(cookieCount >= ((sadness + 1) * 100000 )) {
       cookieCount = cookieCount - ((sadness + 1) * 100000);
       sadness = sadness + 1;
-      
+
       update();
     }
 
@@ -206,13 +207,13 @@ class SecondPage extends Component
             <Col>
               <a className="cookie" href="#" onClick={() => add()} /* onLoad={() => load()} */ >
                 <img id="cookieImg" src="https://i.pinimg.com/originals/69/ae/13/69ae13357d4efeed8530c507e26877f8.png" alt="" />
-                <br/><br/>                
+                <br/><br/>
               </a>
 
               <div className="cookieAmount">
                 <h2 type="text" id="idcookieCount" value="0" disabled />
               </div>
-            
+
               <p id="cookiesPerSecond" />
 
               <button><a href="#" onClick={() => save()}>Save</a></button>
@@ -223,26 +224,26 @@ class SecondPage extends Component
           </Col>
 
 
-          <Col className="mainWindow" xs={14} sm={14} md={14} lg={14} xl={14} >              
+          <Col className="mainWindow" xs={14} sm={14} md={14} lg={14} xl={14} >
             <Row className="gameWindow">
-              <img className="game" src="https://i.pinimg.com/originals/bd/90/ba/bd90ba7c8b3ced391e376ce0f9144f68.png" alt="" />
+              <img className="game" src={House} alt="" />
             </Row>
             <Row className="infoWindow">
 
             </Row>
           </Col>
 
-          <Col className="secondRowRight" xs={6} sm={6} md={6} lg={6} xl={6} >    
+          <Col className="secondRowRight" xs={6} sm={6} md={6} lg={6} xl={6} >
             <Row>
-              <Row>   
-                <button className="upgradesImageContainer">                 
+              <Row>
+                <button className="upgradesImageContainer">
                   <div className="upgradeTooltip">
                     <p id="priceAutoClicker" />
                     <p id="amountAutoClicker"/>
                   </div>
-                  <img onClick={() => buyAutoClicker()} className="upgradesImage" src="https://t3.rbxcdn.com/55d0037f7405a04efed98030cd57956f" alt="" />
+                  <img onClick={() => buyAutoClicker()} className="upgradesImage" src="https://img.icons8.com/dusk/452/cursor.png" alt="" />
                 </button>
-              
+
                 <button className="upgradesImageContainer">
                   <div className="upgradeTooltip">
                     <div><p id="priceGrandma" /></div>
@@ -270,13 +271,13 @@ class SecondPage extends Component
                     <img onClick={() => buySadness()} className="upgradesImage" src="https://cdn.discordapp.com/emojis/399972388571185152.png" alt="" />
                   </button>
                 </span>
-              </Row> 
+              </Row>
 
               <Row></Row>
 
               <Row className="upgradeSection">
                 <Col>
-                  <div className="upgradesContainer">          
+                  <div className="upgradesContainer">
                     <div id="testo" style={{display: "none"}} className="upgradesContainer">
                       <button className="upgradesImageContainer">
                         <div className="upgradeTooltip">
@@ -289,10 +290,10 @@ class SecondPage extends Component
                   </div>
                 </Col>
               </Row>
-              
+
             </Row>
           </Col>
-        
+
         </Row>
       </>
     );

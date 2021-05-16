@@ -27,18 +27,18 @@
 {
   object-fit: cover;
   width: calc(10vw + 30px);
-  height: calc(10vw + 20px); 
+  height: calc(10vw + 20px);
   filter: saturate(700%) hue-rotate(50deg);
   transition: all 0.3s;
 }
 
-.cookie:hover img 
+.cookie:hover img
 {
   transform: scale(1.025);
   filter: saturate(1000%) hue-rotate(50deg);
 }
 
-.cookie:active img 
+.cookie:active img
 {
   transform: scale(1.1);
   filter: saturate(1500%) hue-rotate(50deg);
@@ -50,17 +50,17 @@
   justify-content: center;
   justify-self: center;
   width: auto;
-}  
+}
 
 .cookieAmount h2
 {
   color: white;
-}  
+}
 
 .cookieImg:hover .cookieAmount h2
 {
   transform: scale(1.1);
-}  
+}
 
 .cookieAmount:hover
 {
@@ -89,13 +89,12 @@
     outline: none;
   }
 
-  .upgradeTooltip p
-  {
-    
-    background-color: rgb(0, 0, 0);
-    line-height: 40%;
-  }
-    
+  // .upgradeTooltip p
+  // {
+  //   background-color: rgb(0, 0, 0);
+  //   line-height: 100%;
+  // }
+
   .upgradesImageContainer:hover .upgradeTooltip
   {
     visibility: visible;
@@ -111,7 +110,7 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color:  transparent transparent black transparent;
+    border-color:  transparent transparent rgba(161, 0, 224, 0.65) transparent;
   }
 
   .upgradesImageContainer
@@ -131,6 +130,7 @@
     width: 3.0em;
     height: 3.0em;
     object-fit: contain;
+    image-rendering: pixelated;
   }
 
   .upgradesImage:hover
@@ -149,13 +149,12 @@
     height: 100%;
   }
 
-
 }
 
 .mainWindow
 {
   background-color: rgba(188, 146, 255, 0.226);
-  
+
   .gameWindow
   {
     border: 10px solid rgba(0, 0, 0, 0.8);
@@ -166,7 +165,6 @@
 
     .game
     {
-      image-rendering: pixelated;
       width: calc(50% + 5vw);
     }
   }
@@ -176,5 +174,5 @@
     background-color: rgba(0, 0, 0, 0.8);
     height: 30%;
   }
-  
+
 }
