@@ -1,7 +1,7 @@
 # clicker_client
 Definitely not a Cookie Clicker clone.
 
-![](https://github.com/johnkdbell/clicker_client/blob/main/assets/screenshots/screenshot.png)
+![](https://github.com/johnkdbell/clicker_client/tree/main/assets/screenshots/screenshot.png)
 
 You click the heart on the left to gain points to put towards upgrades on the right.
 The middle does nothing for now.
